@@ -8,11 +8,18 @@ def index(request):
 def home(request):
     return render(request, 'home.html')
 
+def formsubmission(request):
+    request.session['name'] = request.POST['name']
+    request.session['location'] = request.POST['location']
+    request.session['lang'] = request.POST['lang']
+    request.session['comment'] = request.POST['comment']    
+    return redirect('/display')
+
 def display(request):
     context = {
-        'name' : request.POST ['name'],
-        'location': request.POST['location'],
-        'lang' : request.POST['lang'],
-        'comment' : request.POST['comment'],
+        'name' : request.session ['name'],
+        'location': request.session['location'],
+        'lang' : request.session['lang'],
+        'comment' : request.session['comment'],
     }
     return render(request, 'display.html', context)
