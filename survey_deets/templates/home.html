@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="/display" method="POST">
+            {% csrf_token %}
+            <p>Your Name: <input name="name" type="name"></p>
+            <p>Dojo Location: <input  name="location" type="Dojo Location"></p>
+            <p>Favourite Language: <input name="lang" type="Favourite language"></p>
+            <p>Comment <input name="comment" type="Comment"></p>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
